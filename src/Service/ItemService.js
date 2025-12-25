@@ -1,33 +1,38 @@
-// Make Calls to the backend server
-import axios from "axios";
+import api from "./api";
 
 // Add Item POST call
-export const addItem = async (item) => {
-  return await axios.post(
-    "http://localhost:8080/api/v1.0/admin/items",
+export const addItem = (item) => {
+  return api.post(
+    "/admin/items",
     item,
     {
-      headers : {'Authorization' : `Bearer ${localStorage.getItem('token')}`}
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     }
   );
 };
 
-//Delete item API DELETE call
-export const deleteItem = async (itemId) => {
-  return await axios.delete(
-    `http://localhost:8080/api/v1.0/admin/items/${itemId}`
-    ,
+// Delete Item DELETE call
+export const deleteItem = (itemId) => {
+  return api.delete(
+    `/admin/items/${itemId}`,
     {
-      headers : {'Authorization' : `Bearer ${localStorage.getItem('token')}`}
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     }
   );
 };
 
-//Read items GET call
-export const fetchItems = async () => {
-  return await axios.get("http://localhost:8080/api/v1.0/items",
+// Read Items GET call
+export const fetchItems = () => {
+  return api.get(
+    "/items",
     {
-      headers : {'Authorization' : `Bearer ${localStorage.getItem('token')}`}
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     }
   );
 };

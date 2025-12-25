@@ -1,19 +1,36 @@
-import axios from "axios";
+import api from "./api";
 
-export const latestOrders = async () => {
-  return await axios.get("http://localhost:8080/api/v1.0/orders/latest", {
-    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-  });
+export const latestOrders = () => {
+  return api.get(
+    "/orders/latest",
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
 };
 
-export const createOrder = async (order) => {
-  return axios.post("http://localhost:8080/api/v1.0/orders", order, {
-    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-  });
+export const createOrder = (order) => {
+  return api.post(
+    "/orders",
+    order,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
 };
 
-export const deleteOrder = async (id) => {
-  return axios.post(`http://localhost:8080/api/v1.0/orders/${id}`, {
-    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-  });
+export const deleteOrder = (id) => {
+  return api.post(
+    `/orders/${id}`,
+    null,
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }
+  );
 };
