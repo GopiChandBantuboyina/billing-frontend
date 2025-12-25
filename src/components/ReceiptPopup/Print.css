@@ -1,0 +1,21 @@
+@media print {
+
+  body * {
+    visibility: hidden;
+  }
+
+  .receipt-popup-overlay,
+  .receipt-popup-overlay * {
+    visibility: visible;
+  }
+  .receipt-popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: none !important;
+  }
+  .receipt-popup .btn {
+    display: none;
+  }
+}

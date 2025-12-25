@@ -1,0 +1,34 @@
+
+.users-container {
+  display: flex;              /* Enables Flexbox layout */
+  gap: 20px;                  /* Adds space between columns */
+  padding: 20px;              /* Adds inner spacing around content */
+  height: calc(100vh - 5rem); /* Makes it fill most of the screen height */
+  box-sizing: border-box;     /* Includes padding & border in element's total size */
+  background-color: #2C333f;  /* Dark background for contrast */
+}
+
+
+.left-column
+{
+    flex : 0.7;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.right-column
+{
+    flex: 0.3;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    height: 100%;
+    box-sizing: border-box;
+
+}
