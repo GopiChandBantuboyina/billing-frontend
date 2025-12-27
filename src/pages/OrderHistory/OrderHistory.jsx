@@ -27,7 +27,7 @@ const OrderHistory = () => {
   const formatDate = (dateString) => {
     if (!dateString) return "N/A";
 
-    return new Date(dateString).toLocaleString("en-IN", {
+    return new Date(dateString + "Z").toLocaleString("en-IN", {
       year: "numeric",
       month: "short",
       day: "numeric",
