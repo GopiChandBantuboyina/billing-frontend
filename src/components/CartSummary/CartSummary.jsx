@@ -241,6 +241,7 @@ const CartSummary = ({
           onClose={() => {
             setShowPopup(false);
             clearAll();
+            toast.success("Order placed successfully");
           }}
           onPrint={handlePrintReceipt}
         />
