@@ -27,15 +27,15 @@ const OrderHistory = () => {
   const formatDate = (dateString) => {
     if (!dateString) return "N/A";
 
-    const options = {
+    return new Date(dateString).toLocaleString("en-IN", {
       year: "numeric",
       month: "short",
       day: "numeric",
       hour: "2-digit",
       minute: "2-digit",
-    };
-
-    return new Date(dateString).toLocaleString("en-US", options);
+      hour12: true,
+      timeZone: "Asia/Kolkata",
+    });
   };
 
   if (loading) {
