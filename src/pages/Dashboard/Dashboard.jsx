@@ -105,14 +105,20 @@ const Dashboard = () => {
                         </span>
                       </td>
                       <td>
-                        {new Date(order.createdAt).toLocaleString("en-IN", {
-                          day: "2-digit",
-                          month: "short",
-                          year: "numeric",
-                          hour: "2-digit",
-                          minute: "2-digit",
-                          hour12: true,
-                        })}
+                        {order.createdAt
+                          ? new Date(order.createdAt + "Z").toLocaleString(
+                              "en-IN",
+                              {
+                                day: "2-digit",
+                                month: "short",
+                                year: "numeric",
+                                hour: "2-digit",
+                                minute: "2-digit",
+                                hour12: true,
+                                timeZone: "Asia/Kolkata",
+                              }
+                            )
+                          : "N/A"}
                       </td>
                     </tr>
                   ))
