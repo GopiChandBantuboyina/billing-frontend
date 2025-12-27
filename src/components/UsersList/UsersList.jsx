@@ -6,10 +6,10 @@ const UsersList = ({users, setUsers}) => {
 
     const [searchTerm, setSearchTerm]  = useState("");
 
-    const filteredUsers = users.filter(user => {
+    const filteredUsers = users.filter(user =>
+        (user.name ?? "").toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
-        return user.name.toLowerCase().includes(searchTerm.toLowerCase())
-    })
 
     const deleteByUserId = async (id) => {
 
